@@ -1,0 +1,21 @@
+<%= form_with(model: subreddit, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :subreddit_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :subreddit_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :subreddit_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

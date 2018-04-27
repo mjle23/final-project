@@ -1,0 +1,28 @@
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <%= render 'subreddits/form', subreddit: @subreddit %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <% if @subreddits.blank? %>
+        <p class="text-center">There aren't any subreddits yet, you should create one!</p>
+      <% else %>
+        <% @subreddits.each do |subreddit| %>
+          <%= render 'subreddits/subreddit', subreddit: subreddit %>
+          <br>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <h1>Welcome to Reddit Lite!</h1>
+      <p>Sign up or log in to get started!</p>
+    </div>
+  </div>
+<% end %>
+
